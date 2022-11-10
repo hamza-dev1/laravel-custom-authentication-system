@@ -1,0 +1,51 @@
+@extends('layouts.auth-base')
+@section('title', 'Login')
+
+@section('content')
+    <!-- component -->
+    <div class="grid min-h-screen place-items-center">
+        <div class="p-12 bg-white rounded w-11/12 sm:w-8/12 md:w-1/2 lg:w-5/12">
+            <h1 class="text-xl font-semibold">Welcome, <span class="font-normal">fill your information for your new
+                    account</span></h1>
+            <form class="mt-6">
+
+                <div class="flex justify-between gap-3 mb-2">
+                    <span class="w-1/2">
+                        <label for="firstname" class="block text-xs font-semibold text-gray-600 uppercase">Firstname</label>
+                        <input id="firstname" type="text" name="firstname" placeholder="John" autocomplete="given-name"
+                            class="block w-full p-3 mt-2 text-black bg-cyan-50 appearance-none focus:outline-none focus:bg-cyan-100 focus:shadow-inner"
+                            required />
+                    </span>
+                    <span class="w-1/2">
+                        <label for="lastname" class="block text-xs font-semibold text-gray-600 uppercase">Lastname</label>
+                        <input id="lastname" type="text" name="lastname" placeholder="Doe" autocomplete="family-name"
+                            class="block w-full p-3 mt-2 text-black bg-cyan-50 appearance-none focus:outline-none focus:bg-cyan-100 focus:shadow-inner"
+                            required />
+                    </span>
+                </div>
+
+                <div class="">
+                    <label for="email" class="block text-xs font-semibold text-gray-600 uppercase">E-mail</label>
+                    <input id="email" type="email" name="email" placeholder="john.doe@company.com"
+                        autocomplete="email"
+                        class="block w-full p-3 mt-2 text-black bg-cyan-50 appearance-none focus:outline-none focus:bg-cyan-100 focus:shadow-inner"
+                        required />
+
+                </div>
+                <div class="">
+                    <label for="password" class="block mt-2 text-xs font-semibold text-gray-600 uppercase">Password</label>
+                    <input id="password" type="password" name="password" placeholder="********"
+                        autocomplete="current-password"
+                        class="block w-full p-3 mt-2 text-black bg-cyan-50 appearance-none focus:outline-none focus:bg-cyan-100 focus:shadow-inner"
+                        required />
+
+                </div>
+                <button type="submit"
+                    class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-cyan-900 hover:shadow-none">
+                    Sign up
+                </button>
+                <a href="{{ route('login') }}" class="inline-block mt-4 text-xs text-black cursor-pointer">Already member?</a>
+            </form>
+        </div>
+    </div>
+@endsection
