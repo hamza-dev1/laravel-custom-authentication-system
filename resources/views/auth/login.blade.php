@@ -15,6 +15,7 @@
                             <label for="email" class="block text-xs font-semibold text-gray-600 uppercase">E-mail</label>
                             <input id="email" type="email" name="email" placeholder="john.doe@company.com"
                                 autocomplete="email"
+                                value="{{ old('email') }}"
                                 class="block w-full p-3 mt-2 text-black bg-cyan-50 appearance-none focus:outline-none focus:bg-cyan-100 focus:shadow-inner" />
                             <span class="text-red-600">
                                 @error('email')
@@ -40,6 +41,11 @@
                             class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-cyan-900 hover:shadow-none">
                             Sign in
                         </button>
+                        <div class="mt-3">
+                            <span class="text-red-600">
+                                {{ $errors->first('password-incorrect') }}
+                            </span>
+                        </div>
                         <div class="flex justify-between">
                             <p class="inline-block mt-4 text-xs text-black cursor-pointer">Forgot password?</p>
                             <a href="{{ route('register') }}"
